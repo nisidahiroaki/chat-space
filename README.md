@@ -2,7 +2,7 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
+|name    |string|null: false|
 |email   |string|null: false|
 |password|string|null: false|
 ### Association
@@ -24,9 +24,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string |null: false|
-|user_id  |integer|null: false,  foreign_key:true|
-|post_id  |integer|null: false,  foreign_key:true|
+|name  |string |null: false|
 ### Association
 - has_many  :groups_users
 - has_many  :users,  through:  :groups_users
