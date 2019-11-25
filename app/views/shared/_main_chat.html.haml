@@ -1,0 +1,36 @@
+
+.contents__chat-main
+  .content__main-header
+    .content__main-header__box
+      .content__main-header__box__group
+        test-group
+      .content__main-header__box__member-list
+        Member:
+        .content__main-header__box__member-list__menber
+          user
+    .content__main-header__edit
+      .content__main-header__edit-btn  
+        Edit
+        -# = link_to('name', {})
+
+  .content__messages
+    .content__message
+      .content__message__upper-info
+        .content__message__upper-info__talker
+          test-user
+        .content__message__pper-info__date
+          2019/11/23
+      .content__message__text
+        こんにちは！
+
+  .content__form
+    .content__new-message
+      .content__new-message__input-box
+        %input{placeholder: "type a message",class: "input-box-text"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+        -# .content__new-message__input-box__image__fa-image
+
+      %input{type: "submit", value: "Send", class:"submit-btn"}
+       
