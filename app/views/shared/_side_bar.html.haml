@@ -2,29 +2,34 @@
 .contents__chat-side
   .content__side-header
     .content__side-header__box
-      .content__side-header__box-username
+      %h3.content__side-header__box-username
         = current_user.name
-      .content__side-header__box-menu
-        = link_to'#', class: "content__side-header__box-menu-edit" do
-          = icon('fas', 'edit')
-        = link_to edit_user_path(current_user), class: "content__side-header__box-menu-cog" do
-          = icon('fas','cog')
+      %ul.content__side-header__box-menu
+        %li.menu
+        = link_to new_group_path do
+          = icon('fas', 'edit', class: 'icon')
+        %li.menu
+        = link_to edit_user_path(current_user) do
+          = icon('fas','cog', class: 'icon')
 
   .contents__groups
-    .content__group
-      test-group
-    .content__comment
-      さようなら
+    - current_user.groups.each do |group|
+      .group
+        = linl_to group_messages_path(group) do
+          .content__group
+            = group.name
+          .content__comment
+            メッセージはまだありません。
 
-    .content__group
-      sample-group
-    .content__comment
-      hello!
-      
-    .content__group
-      sample-group
-    .content__comment
-      まだメッセージがありません。
+          -# .content__group
+          -#   sample-group
+          -# .content__comment
+          -#   hello!
+            
+          -# .content__group
+          -#   sample-group
+          -# .content__comment
+          -#   まだメッセージがありません。
 
 
 
