@@ -3,11 +3,11 @@
   .content__side-header
     .content__side-header__box
       .content__side-header__box-username
-        test-users
+        = current_user.name
       .content__side-header__box-menu
         = link_to'#', class: "content__side-header__box-menu-edit" do
           = icon('fas', 'edit')
-        = link_to'#', class: "content__side-header__box-menu-cog" do
+        = link_to edit_user_path(current_user), class: "content__side-header__box-menu-cog" do
           = icon('fas','cog')
 
   .contents__groups
