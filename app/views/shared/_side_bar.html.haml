@@ -15,11 +15,11 @@
   .contents__groups
     - current_user.groups.each do |group|
       .group
-        = linl_to group_messages_path(group) do
+        = link_to group_messages_path(group) do
           .content__group
             = group.name
           .content__comment
-            メッセージはまだありません。
+            = group.show_last_message
 
           -# .content__group
           -#   sample-group
