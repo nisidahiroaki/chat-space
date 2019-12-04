@@ -22,7 +22,9 @@
       font-family: bold;
     }
 
-    &__box-menu {}
+    &__box-menu {
+      display: flex;
+    }
 
       &__box-menu-edit {
         color: #FFFFFF;
@@ -34,6 +36,9 @@
     
 }
 
+.icon {
+  color: #FFFFFF;
+}
 
 
 
@@ -88,10 +93,14 @@
   border: solid 1px #38aef0;
   position: absolute;
   right: 40px;
+  text-decoration: none;
   }
 }
 
 
+// . {
+//   text-decoration: none;
+// }
 
 
 .content__messages {
