@@ -43,7 +43,7 @@ $(function() {
     
     })
     .fail(function(){
-        alert("メッセージ送信に失敗しました")
+        alert("メッセージ送信に失敗しました");
     });
   })
 
@@ -69,7 +69,7 @@ $(function() {
         $('.content__messages').animate({ scrollTop: $('.content__messages')[0].scrollHeight});
       })
       .fail(function() {
-        console.log('error');
+        alert('error');
       });
     };
   }
