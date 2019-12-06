@@ -36,7 +36,7 @@ $(function() {
     })
     .done(function(message){
       var html = buildHTML(message);
-      $('.content__messages').append(html);
+      $('.messages').append(html);
       $('.content__messages').animate({ scrollTop: $('.content__messages')[0].scrollHeight});
       $('#new_message')[0].reset();
       $('.form__submit').prop('disabled', false);
@@ -51,7 +51,8 @@ $(function() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)){ 
       var href = 'api/messages#index {:format=>"json"}'             
       var last_message_id = $('.content__message:last').data('message-id');
-      last_message_id = $('.content__message:last').data("message-id");
+      console.log(last_message_id)
+      // last_message_id = $('.content__message:last').data("message-id");
 
       $.ajax({       
         url: href,     
@@ -64,9 +65,9 @@ $(function() {
         var insertHTML = '';
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
+          $('.messages').append(insertHTML)
+          $('.content__messages').animate({ scrollTop: $('.content__messages')[0].scrollHeight});
         });
-        $('.messages').append(insertHTML)
-        $('.content__messages').animate({ scrollTop: $('.content__messages')[0].scrollHeight});
       })
       .fail(function() {
         alert('error');
