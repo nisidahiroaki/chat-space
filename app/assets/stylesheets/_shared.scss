@@ -32,12 +32,10 @@
       &__box-menu-cog {
         color: #FFFFFF;
       }
-      // .content__side-header-box {
+      .content__side-header__box-menu > a {
+        color: #FFFFFF;
+      }
     
-}
-
-.icon {
-  color: #FFFFFF;
 }
 
 
@@ -97,12 +95,15 @@
   }
 }
 
+
+
 .group > a {
   text-decoration: none;
 }
 
 .content__main-header__edit-btn > a {
   text-decoration: none;
+  color: #38aef0;
 }
 
 .content__messages {
